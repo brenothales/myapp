@@ -1,0 +1,59 @@
+<style>
+	th{background:#ABA;}
+	td{BACKGROUND: #FBFBF3;}
+	td{border:#999 1px solid;}
+</style>
+
+<h1>Cadastro</h1>
+ 
+<div id="dialog-cadastro" title="Cadastro de Pessoas"> 
+	<%= render 'form' %>
+</div>
+ 
+ <button id="bt-cadastra">Novo</button>
+ <hr>
+  <table width="100%" id="table-cadastrados">
+	<thead><tr>
+		<th>Nome</th>
+		<th>Telefone</th></tr>
+	</thead>
+	<tbody>
+	<% @contatos.each do |contato| %>
+		<tr>
+			<td><%= contato.nome %></td>
+			<td><%= contato.telefone %></td>		
+		</tr>
+	<% end %>
+	</tbody>
+  </table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+     	$( "#bt-cadastra" )
+			.button()
+			.click(function() {
+				$( "#dialog-cadastro" ).dialog( "open" );
+			});
+			
+		$( "#dialog-cadastro" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 350,
+			modal: true,
+			buttons: {
+				"Cadastrar": function() {
+						$( this ).dialog( "close" );   
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+				allFields.val( "" ).removeClass( "ui-state-error" );
+			}
+		});
+
+
+    });
+		
+</script>

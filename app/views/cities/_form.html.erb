@@ -1,0 +1,16 @@
+<%= form_for @city do |f| %>
+ <!-- f.input :name %> -->
+     <!-- f.association :country %> -->
+
+  <!-- f.select :country_id, grouped_options_for_select(Country.for_select) %>  -->
+<!-- f.input :country_id, :collection => @continents, :as => :grouped_select, :group_method => :countries %> -->
+  <!-- f.grouped_collection_select(:city, :country_id, @continents, :countries, :name, :id, :name) %>  -->
+
+ <!-- f.grouped_collection_select(:city, :country_id, @continents, :countries, :name, :id, :name) %> -->
+ <!-- f.input grouped_collection_select(:city, :country_id, 
+ @continents, :countries, :name, :id, :name) %> -->
+
+ <%= f.grouped_collection_select(:country_id, @continents, :countries, :name, :id, :name) %>
+<%= f.submit %>
+
+<% end %>

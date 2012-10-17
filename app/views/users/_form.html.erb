@@ -1,0 +1,12 @@
+<%= simple_form_for @user do |f| %>
+
+    <%= f.input :name, :id=>"name", :class=>"text ui-widget-content ui-corner-all"  %>
+
+    <%= f.input :email, :id=>"email", :class=>"text ui-widget-content ui-corner-all" %>
+
+    <%= f.input :password, :id=>"password", :class=>"text ui-widget-content ui-corner-all" %>
+
+
+
+    <%= f.submit %>
+<% end %>
